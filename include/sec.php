@@ -1,6 +1,6 @@
  <!-- ======= Hero Section ======= -->
  <section id="hero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <div class="container non-printable" data-aos="zoom-out" data-aos-delay="100">
         <img src="./img/logo-removebg-preview.png" alt="">
         <br>
       <p class="font-mirt fz-h">ยินดีต้อนรับเข้าสู่ ระบบติดตามเอกสารมาตรา 5</p>

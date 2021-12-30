@@ -17,6 +17,7 @@ $query3 = sqlsrv_query($conn, $sql3);
 
 ?>
 <h1 class="app-page-title text-end">รายงานเอกสาร / Report</h1>
+<a href="#" onclick="window.print()" class="btn btn-sm btn-warning text-white non-printable" style="font-size:20px;">พิมพ์รายงาน</a>
 <div class="container">
 
     <h5>สถาบันวิจัยวิทยาศาสตร์และเทคโนโลยีแห่งประเทศไทย 35 เทคโนธานี <h5>

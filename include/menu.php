@@ -1,7 +1,7 @@
- <center>
+<center>
      <!-- ======= Featured Services Section ======= -->
    <section id="featured-services mg-l-menu font-mirt" class="featured-services">
-      <div class="container " data-aos="fade-up">
+      <div class="container non-printable " data-aos="fade-up">
 
         <div class="row ">
           <div class="col-md-8 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mg-l-menu">

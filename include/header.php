@@ -1,7 +1,8 @@
  <!-- ======= Header ======= -->
  <header id="header" class="d-flex align-items-center font-mirt">
-   <div class="container d-flex align-items-center justify-content-between">
-     <a href="?page=dash"><img src="img/tistr_sitename.png" class="" width="90%" /></a>
+   <div class="container d-flex align-items-center justify-content-between non-printable">
+     <a href="?page=dash"  class="non-printable">
+       <img src="img/tistr_sitename.png"  class="non-printable" width="90%" /></a>
      
      <!-- Uncomment below if you prefer to use an image logo -->
      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->

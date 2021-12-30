@@ -1,4 +1,4 @@
-    <?php
+<?php
 $query = "SELECT DISTINCT  standard_status  ,  a.standard_idtb,b.id_statuss,b.statuss_name AS name_status  FROM main_std a 
 INNER JOIN select_status b ON a.standard_status = b.id_statuss ORDER BY standard_status ASC";
 $statement = sqlsrv_query($conn,$query);

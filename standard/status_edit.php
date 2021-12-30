@@ -35,7 +35,7 @@ $date_today = (date('d/m/Y H:i:s'));
                                             <div class="form-group mb-2">
                                                 <label for="">สถานะ</label>
                                                 <select class="form-control" name="standard_status" value="<?php echo $result['standard_status']?>"
-                                                    style="height: unset !important;" require>
+                                                    style="height: unset !important;" required>
                                                     <option selected>กรุณาเลือกสถานะ</option>
                                                     <?php
                                                     $sqll = "SELECT * FROM select_status";
@@ -58,7 +58,7 @@ $date_today = (date('d/m/Y H:i:s'));
                                         <div class="">
                                             <div class="form-group mb-2">
                                                 <label for="">วันที่แต่งตั้ง</label>
-                                                <input  id="" type="date" name="standard_day" class=" form-control" value="<?php echo $result['standard_day'] ?>" require>
+                                                <input  id="" type="date" name="standard_day" class=" form-control" value="<?php echo $result['standard_day'] ?>" required>
                                             </div>
                                         </div>
                                     </div>

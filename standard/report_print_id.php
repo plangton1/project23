@@ -47,25 +47,25 @@ $query3 = sqlsrv_query($conn, $sql3);
             echo "</tr>";
             echo "<tr>";
             echo "<td width='85' valign='top'><b>ชื่อเอกสาร :</b></td>";
-            echo "<td width='279'>" . $row["s_name"] . "</td>";
+            echo "<td width='279'>" . $row["standard_detail"] . "</td>";
             echo "<br style='line-height: 18pt'>";
             echo "</tr>";
             echo "<tr>";
-            echo "<td valign='top'><b>ที่อยู่ :</b></td>";
-            echo "<td>" . $row["s_addr"] . "</td>";
+            echo "<td valign='top'><b>วันที่เพิ่ม :</b></td>";
+            echo "<td>" . $row["standard_create"] . "</td>";
             echo "</tr>";
      echo "<br>";
 
-            echo "<tr>";
-            echo "<td valign='top'><b>อีเมล์ :</b></td>";
-            echo "<td>" . $row["s_email"] . "</td>";
-            echo "</tr>";
-     echo "<br>";
+    //         echo "<tr>";
+    //         echo "<td valign='top'><b>อีเมล์ :</b></td>";
+    //         echo "<td>" . $row["s_email"] . "</td>";
+    //         echo "</tr>";
+    //  echo "<br>";
 
-            echo "<tr>";
-            echo "<td valign='top'><b>เบอร์ติดต่อ :</b></td>";
-            echo "<td>" . $row["s_phone"] . "</td>";
-            echo "</tr>";
+    //         echo "<tr>";
+    //         echo "<td valign='top'><b>เบอร์ติดต่อ :</b></td>";
+    //         echo "<td>" . $row["s_phone"] . "</td>";
+    //         echo "</tr>";
      echo "<br>";
      echo "<hr>";
         }
@@ -120,3 +120,5 @@ $query3 = sqlsrv_query($conn, $sql3);
 
                     </tbody>
                 </table>    
+
+                

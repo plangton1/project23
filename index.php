@@ -24,8 +24,8 @@
         if (isset($_GET['function']) && $_GET['function'] == 'update') {
             include('standard/status_edit.php');
         }elseif (isset($_GET['function']) && $_GET['function'] == 'print') {
-            include('standard/report_print.php');
-        } else {
+            include('standard/report_print_id.php');
+        } else { 
         include('standard/status_detail.php');
         }
     } elseif (isset($_GET['page']) && $_GET['page'] == 'status') {

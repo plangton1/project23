@@ -193,7 +193,7 @@ $query3 = sqlsrv_query($conn, $sql3);
 
                 <div class="col-sm-6">
                     <div class="card   mb-3" style="max-width:100%">
-                        <div class="card-header text-white bg-primary">หน่วยงานที่ขอ</div>
+                        <div class="card-header text-white bg-primary">ประเภทผลิตภัณฑ์</div>
                         <?php
                         $standarsidtb = $_REQUEST['standard_idtb'];
                         $sql4 = "SELECT * FROM dimension_type WHERE standard_idtb  = '$standarsidtb' ";

@@ -1,14 +1,19 @@
-<?php  
- //filter.php  
- if(isset($_POST["standard_create"], $_POST["standard_day"]))  
- {  
-      require('../connection/connection.php');
-      $output = '';  
-      $query = "  
+<!-- $query = "  
            SELECT * FROM main_std  
            WHERE standard_day BETWEEN '".$_POST["standard_create"]."' AND '".$_POST["standard_day"]."'  
-      ";  
-      $result = sqlsrv_query($conn, $query);  
+      ";   -->
+<?php  
+ //filter.php  
+//  if(isset($_POST["standard_create"], $_POST["standard_day"]))  
+//  {  
+      include('../connection/connection.php');
+      $output = '';  
+     //  $query = "SELECT * FROM  main_std WHERE standard_create  = '12/28/2021' AND standard_day = '12/31/2021'";
+      $query = "SELECT * FROM  main_std WHERE standard_create  = '".$_POST["standard_create"]."' AND standard_day = '".$_POST["standard_day"]."'";
+      print_r($query);
+      $stmt = sqlsrv_query($conn, $query);  
+     // $result = sqlsrv_num_rows($stmt);
+     print_r($stmt);
       $output .= '  
            <table class="table table-bordered">  
                 <tr>  
@@ -20,9 +25,9 @@
                      <th width="30%">วันที่เพิ่มเอกสาร</th>  
                 </tr>  
       ';  
-      if(sqlsrv_num_rows($result) > 0)  
-      {  
-           while($row = mysqli_fetch_array($result))  
+     //  if($result > 0)  
+     //  {  
+           while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC))  
            {  
                 $output .= '  
                      <tr>  
@@ -34,16 +39,16 @@
                      </tr>  
                 ';  
            }  
-      }  
-      else  
-      {  
-           $output .= '  
-                <tr>  
-                     <td colspan="5">ไม่มีเอกสารตามระยะเวลาที่ระบุ</td>  
-                </tr>  
-           ';  
-      }  
+     //  }  
+     //  else  
+     //  {  
+     //       $output .= '  
+     //            <tr>  
+     //                 <td colspan="5">ไม่มีเอกสารตามระยะเวลาที่ระบุ</td>  
+     //            </tr>  
+     //       ';  
+     //  }  
       $output .= '</table>';  
       echo $output;  
- }  
+//  }  
  ?>

@@ -61,8 +61,8 @@
  <script>  
       $(document).ready(function(){  
            $.datepicker.setDefaults({  
-                dateFormat: 'dd-mm-yy'   
-           });  
+                dateFormat: 'mm/dd/yy'   
+           }); 
            $(function(){  
                 $("#standard_create").datepicker();  
                 $("#standard_day").datepicker();  

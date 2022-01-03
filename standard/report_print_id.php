@@ -88,7 +88,7 @@ $query3 = sqlsrv_query($conn, $sql3);
                     <tbody>
                        
                             <td class="align-middle"></td>
-                             <td class="align-middle"><?= $result['standard_meet'] ?></td>
+                             <td class="align-middle"><?= date($result['standard_create']) ?></td>
                             <td class="align-middle"><?= $result['standard_number'] ?></td>
                             <td class="align-middle"><?= $result['standard_mandatory'] ?></td>
                             <?php if($result['standard_day'] == '') : ?>

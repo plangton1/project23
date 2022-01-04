@@ -12,9 +12,9 @@ if (isset($_POST) && !empty($_POST)) {
         $alert .= 'window.location.href = "?page=add_group";';
         $alert .= '</script>';
         echo $alert;
-        exit();;
+        exit();
     } else {
-        echo "Error: " . $sql0 . "<br>" . sqlsrv_errors($conn);
+        echo "Error: " . $sql . "<br>" . sqlsrv_errors($conn);
     }
     sqlsrv_close($conn);
 }

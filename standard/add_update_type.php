@@ -8,9 +8,10 @@ if (isset($_GET['type_id']) && !empty($_GET['type_id'])) {
 }
 if (isset($_POST) && !empty($_POST)) {
     $type_name = $_POST['type_name'];
-    $sql = "UPDATE type_tb SET type_name = ?  WHERE type_id = ? ";
-    $params = array($type_name , $type_id);
-    if (sqlsrv_query($conn, $sqls)) {
+    $sql = "UPDATE type_tb SET type_name= ?  WHERE type_id = ? ";
+    $params = array($type_name, $type_id);
+
+    if (sqlsrv_query($conn, $sql , $params)) {
         $alert = '<script type="text/javascript">';
         $alert .= 'alert("แก้ไขข้อมูลประเภทสำเร็จ !!");';
         $alert .= 'window.location.href = "?page=add_type";';

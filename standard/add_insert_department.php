@@ -2,21 +2,17 @@
 $department_id = (isset($_GET['department_id'])) ? $_GET['department_id'] : '';
 $department_name = (isset($_GET['department_name'])) ? $_GET['department_name'] : '';
 if (isset($_POST) && !empty($_POST)) {
-    // print_r($_POST);
     $department_id = $_POST['department_id'];
     $department_name = $_POST['department_name'];
     $sql = "INSERT INTO department_tb VALUES (?,?) ";
     $params = array( $department_id,$department_name);
-    $sss = sqlsrv_query($conn, $sql, $params);
-    // print_r($params);
-    if ($sss = true) {
+    if (sqlsrv_query($conn, $sql, $params)) {
         $alert = '<script type="text/javascript">';
-        $alert .= 'alert("เพิ่มหน่วยงานที่ขอสำเร็จ !!");';
-        $alert .= 'window.location.href = "?page=add_department;';
-    
+        $alert .= 'alert("เพิ่มหน่วยงานสำเร็จ !!");';
+        $alert .= 'window.location.href = "?page=add_department";';
         $alert .= '</script>';
         echo $alert;
-        exit();;
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . sqlsrv_errors($conn);
     }

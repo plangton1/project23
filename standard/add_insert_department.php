@@ -2,11 +2,13 @@
 $department_id = (isset($_GET['department_id'])) ? $_GET['department_id'] : '';
 $department_name = (isset($_GET['department_name'])) ? $_GET['department_name'] : '';
 if (isset($_POST) && !empty($_POST)) {
-    // $department_id = $_POST['department_id'];
+    // print_r($_POST);
+    $department_id = $_POST['department_id'];
     $department_name = $_POST['department_name'];
-    $sql = "INSERT INTO department_tb VALUES ('$department_name') ";
-    $params = array( $department_name);
+    $sql = "INSERT INTO department_tb VALUES (?,?) ";
+    $params = array( $department_id,$department_name);
     $sss = sqlsrv_query($conn, $sql, $params);
+    // print_r($params);
     if ($sss = true) {
         $alert = '<script type="text/javascript">';
         $alert .= 'alert("เพิ่มหน่วยงานที่ขอสำเร็จ !!");';

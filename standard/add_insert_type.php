@@ -2,10 +2,10 @@
 $type_id = (isset($_GET['type_id'])) ? $_GET['type_id'] : '';
 $type_name = (isset($_GET['type_name'])) ? $_GET['type_name'] : '';
 if (isset($_POST) && !empty($_POST)) {
-    // $type_id = $_POST['type_id'];
+    $type_id = $_POST['type_id'];
     $type_name = $_POST['type_name'];
-    $sql = "INSERT INTO type_tb VALUES ('$type_name') ";
-    $params = array( $type_name);
+    $sql = "INSERT INTO type_tb VALUES (?,?) ";
+    $params = array($type_id , $type_name);
     $sss = sqlsrv_query($conn, $sql, $params);
     if ($sss = true) {
         $alert = '<script type="text/javascript">';

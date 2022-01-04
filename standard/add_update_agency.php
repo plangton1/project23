@@ -7,8 +7,8 @@ if (isset($_GET['agency_id']) && !empty($_GET['agency_id'])) {
     $result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC);
 }
 if (isset($_POST) && !empty($_POST)) {
-    $group_name = $_POST['agency_name'];
-    $sql = "UPDATE agency_tb SET agency_name= ?  WHERE agency_id = ? ";
+    $agency_name = $_POST['agency_name'];
+    $sql = "UPDATE agency_tb SET agency_name = ?  WHERE agency_id = ? ";
     $params = array($agency_name, $agency_id);
 
     if (sqlsrv_query($conn, $sql, $params)) {

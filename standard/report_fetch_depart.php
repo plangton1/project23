@@ -3,11 +3,15 @@ require('../connection/connection.php');
 if(($_POST['query']) != '')
 {
  $search_text = implode(",",$_POST['query']);
- $query = "SELECT *  FROM dimension_department  WHERE id_dimension_department IN ($search_text) ";
+ $query = "SELECT * , a.department_id,b.department_id,b.department_name AS name_depart FROM dimension_department a 
+ INNER JOIN department_tb b ON a.department_id = b.department_id
+ INNER JOIN main_std c ON a.standard_idtb = c.standard_idtb  WHERE department_id IN ($search_text) ";
 }
 else
 {
- $query = "SELECT *  FROM dimension_department ";
+ $query = "SELECT * , a.department_id,b.department_id,b.department_name AS name_depart FROM dimension_department a 
+ INNER JOIN department_tb b ON a.department_id = b.department_id
+ INNER JOIN main_std c ON a.standard_idtb = c.standard_idtb";
 }
 
 $statement = sqlsrv_query($conn,$query);
@@ -21,9 +25,9 @@ $i=1;
   <table class="table table-bordered">
   <tr>
    <td>'.$i++.'</td>
-   <td>'.$row["id_dimension_department"].'</td>
-   <td>'.$row["standard_idtb"].'</td>
-   <td>'.$row["department_id"].'</td>
+   <td>'.$row["name_depart"].'</td>
+   <td>'.$row["standard_number"].'</td>
+   <td>'.$row["standard_detail"].'</td>
   </tr>
   </table>
   ';

@@ -45,10 +45,9 @@ $statement = sqlsrv_query($conn,$query);
                     <thead>
                         <tr>
                             <th class="col-1">ลำดับที่</th>
-                            <th class="col-2">วาระจากในที่ประชุมสมอ.</th>
+                            <th class="col-2">ชื่อหน่วยงานศูนย์</th>
                             <th class="col-1">เลขที่มอก.</th>
                             <th class="col-1">ชื่อมาตรฐาน</th>
-                            <th class="col-2">วันที่แต่งตั้งสถานะ</th>
                         </tr>
                     </thead>
                     <tbody>

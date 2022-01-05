@@ -20,10 +20,12 @@
                                             <select name="page" onChange="goTo(this.options[this.selectedIndex].value)"
                                             class="form-control" style="width:50%;">
                                                 <option value="" selected disabled>-กรุณาเลือก-</option>
-                                                <option value="#" selected="selected">รายงานรายศูนย์
+                                                <option value="./standard/report_list.php" selected="selected">รายงานรายศูนย์
                                                 <option value="./standard/report_date.php">รายงานรายช่วงเวลา
                                                 <option value="./standard/report_status.php">รายงานรายสถานะ
-                                                <option href="#" value="">รายงานตามเลขมอก.
+                                                <option value
+                                                
+                                                ="./standard/report_number.php">รายงานตามเลขมอก.
                                                 <option href="#" value="">รายงานตามหน่วยงานคู่แข่งที่เลือกหรือจำนวนคู่แข่ง (มาก-น้อย)
                                             </select>
 

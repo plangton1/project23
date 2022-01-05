@@ -29,7 +29,7 @@ $result = sqlsrv_fetch_array($query);
          
          //ไฟล์
         $count_file = count($_REQUEST['id_dimension_file']);
-
+        print_r($_FILES['fileupload']) ;
         for ($i = 0; $i < $count_file; $i++) {
             $id_dimension_file = $_REQUEST['id_dimension_file'][$i];
             $fileupload = $_FILES['fileupload']['name'][$i];
@@ -47,7 +47,7 @@ $result = sqlsrv_fetch_array($query);
                 for ($i = 0; $i < $count_upload; $i++) {
                     $file_name = $upload['name'][$i];
                     $file_type = $upload['type'][$i];
-                    $file_tmp_name = $upload['tmp_name'][$i];
+                  echo "<br>". $file_tmp_name = $upload['tmp_name'][$i];
                     $file_error = $upload['error'][$i];
                     $file_size = $upload['size'][$i];
         
@@ -64,8 +64,8 @@ $result = sqlsrv_fetch_array($query);
         
                         //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
                         $newname = time() . '-' . $newname;
-                        $path_copy = $path . $newname;
-                        $path_link = "../fileupload/" . $newname;
+                       echo "<br>". $path_copy = $path . $newname;
+                       echo "<br>". $path_link = "../fileupload/" . $newname;
         
                         //echo $newname;
         
@@ -117,34 +117,36 @@ $result = sqlsrv_fetch_array($query);
       }
 
       //หน่วยงานที่ขอ
-      $count_department = count($_REQUEST['id_dimension_department']);
+      echo "<br>" . $count_department = count($_REQUEST['id_dimension_department']);
+
+      echo "<br>" . $count_department_id = count($_REQUEST['department_id']);
 
       for ($i = 0; $i < $count_department; $i++) {
-          $id_dimension_department= $_REQUEST['id_dimension_department'][$i];
-          $department_id = $_REQUEST['department_id'][$i];
+        echo "<br>" . $id_dimension_department= $_REQUEST['id_dimension_department'][$i];
+        echo "<br>" . $department_id = $_REQUEST['department_id'][$i];
           if ($id_dimension_department != '' && $department_id != '') {
-              $sql_update_department = " UPDATE dimension_department SET department_id = '$department_id' WHERE id_dimension_department = '$id_dimension_department'";
-              $show_department = sqlsrv_query($conn, $sql_update_department);
-          } elseif ($id_dimension_department == '' && $department_id != '') {
-              $sql_insert_department = "INSERT INTO dimension_department (standard_idtb,department_id) VALUES (?,?);";
-              $value_department = array($standard_idtb, $department_id);
-              $insert_department = sqlsrv_query($conn, $sql_insert_department, $value_department);
+            echo "<br>" .  $sql_update_department = " UPDATE dimension_department SET department_id = '$department_id' WHERE id_dimension_department = '$id_dimension_department'";
+            echo "<br>" .  $show_department = sqlsrv_query($conn, $sql_update_department);
+          } if ($id_dimension_department == '' && $department_id != '') {
+            echo "<br>" .  $sql_insert_department = "INSERT INTO dimension_department (standard_idtb,department_id) VALUES (?,?);";
+            echo "<br>" .  $value_department = array($standard_idtb, $department_id);
+            echo "<br>" .   $insert_department = sqlsrv_query($conn, $sql_insert_department, $value_department);
           }
       }
 
        //ประเภทผลิตภัณฑ์
-      $count_type = count($_REQUEST['id_dimension_type']);
+     echo "<br>" . $count_type = count($_REQUEST['id_dimension_type']);
 
        for ($i = 0; $i < $count_type; $i++) {
-           $id_dimension_type= $_REQUEST['id_dimension_type'][$i];
-           $type_id = $_REQUEST['type_id'][$i];
+        echo "<br>" .  $id_dimension_type= $_REQUEST['id_dimension_type'][$i];
+        echo "<br>" .  $type_id = $_REQUEST['type_id'][$i];
            if ($id_dimension_type != '' && $type_id != '') {
-               $sql_update_type = " UPDATE dimension_type SET type_id = '$type_id' WHERE id_dimension_type = '$id_dimension_type'";
-               $show_type = sqlsrv_query($conn, $sql_update_type);
-           } elseif ($id_dimension_type == '' && $type_id != '') {
-               $sql_insert_type = "INSERT INTO dimension_type (standard_idtb,type_id) VALUES (?,?);";
-               $value_type = array($standard_idtb, $type_id);
-               $insert_type = sqlsrv_query($conn, $sql_insert_type, $value_type);
+            echo "<br>" .  $sql_update_type = " UPDATE dimension_type SET type_id = '$type_id' WHERE id_dimension_type = '$id_dimension_type'";
+            echo "<br>" .   $show_type = sqlsrv_query($conn, $sql_update_type);
+           } if ($id_dimension_type == '' && $type_id != '') {
+            echo "<br>" .   $sql_insert_type = "INSERT INTO dimension_type (standard_idtb,type_id) VALUES (?,?);";
+            echo "<br>" .  $value_type = array($standard_idtb, $type_id);
+            echo "<br>" .  $insert_type = sqlsrv_query($conn, $sql_insert_type, $value_type);
            }
        }
 

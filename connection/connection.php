@@ -1,5 +1,5 @@
 <?php
-$serverName = "DESKTOP-R0ETL6G"; //LAPTOP-O7F4B0NM , DESKTOP-R0ETL6G , PLUEMMER\SQLEXPRESS
+$serverName = "LAPTOP-O7F4B0NM"; //LAPTOP-O7F4B0NM , DESKTOP-R0ETL6G , PLUEMMER\SQLEXPRESS
 $user = "pluem";
 $pass = "1234";
 
@@ -12,7 +12,7 @@ if( $conn ) {
      // echo "GOOD!!"; 
 }else{
      echo "BAD!!"; 
-     die( print_r( sqlsrv_errors(), true)); 
+     die( print_r( sqlsrv_errors(), true)); //test
      }
 
 

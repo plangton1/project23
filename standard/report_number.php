@@ -95,7 +95,7 @@ $mpdf->WriteHTML($html);
 $mpdf->Output("MyReport.pdf");
 ob_end_flush();
 ?>
-<a class="btn btn-primary" href="MyReport.pdf">โหลดรายงาน</a>
+<!-- <a class="btn btn-primary" href="MyReport.pdf">โหลดรายงาน</a> -->
 <a class="btn btn-sm text-white" style="background-color:black; font-size:20px;" onclick="window.history.go(-1); return false;">ย้อนกลับ</a>
     </center>
     </div>

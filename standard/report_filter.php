@@ -2,6 +2,7 @@
            SELECT * FROM main_std  
            WHERE standard_day BETWEEN '".$_POST["standard_create"]."' AND '".$_POST["standard_day"]."'  
       ";   -->
+      <?php include('date.php');?>
 <?php  
   $i = 1;
  //filter.php  
@@ -18,12 +19,12 @@
       $output .= '  
            <table class="table table-bordered text-center">  
                 <tr>  
-                     <th width="5%">ลำดับ</th> 
-                     <th width="30%">วันที่เพิ่มเอกสาร</th>   
-                     <th width="30%">วันที่แต่งตั้งเอกสาร</th>  
-                     <th width="5%">หมายเลขเอกสาร</th>  
-                     <th width="10%">หมายเหตุ</th>  
-                     <th width="10%">หมายเลข tacking</th>  
+                <th width="5%">ลำดับ</th>  
+                <th width="10%">วันที่เพิ่มเอกสาร</th>   
+                <th width="10%">วันที่แต่งตั้งเอกสาร</th>  
+                <th width="10%">หมายเลขเอกสาร</th>  
+                <th width="10%">หมายเหตุ</th>  
+                <th width="10%">หมายเลข tacking</th>  
                 </tr>  
       ';  
      //  if($result > 0)  
@@ -34,8 +35,8 @@
                 $output .= '  
                      <tr> 
                      <td>'.$i++.'</td>
-                     <td>'.$row["standard_create"].'</td> 
-                     <td>'.$row["standard_day"].'</td> 
+                     <td>'.DateThai($row["standard_create"]).'</td> 
+                     <td>'.DateThai($row["standard_day"]).'</td> 
                      <td>'. $row["standard_number"].'</td>   
                      <td>'.$row["standard_note"].'</td>  
                      <td>'.$row["standard_tacking"].'</td>  

@@ -1,5 +1,6 @@
 <center>
      <?php include('fontthai.php');?>
+     <?php include('date.php');?>
 <?php  
  require('../connection/connection.php');
  $query = "SELECT * FROM main_std ORDER BY standard_idtb desc";  
@@ -42,8 +43,13 @@
                      ?>  
                           <tr>  
                               <td><?php echo $i++ ; ?></td>  
-                              <td><?php echo $row["standard_create"]; ?></td>  
-                              <td><?php echo $row["standard_day"]; ?></td>  
+                              <td><?php echo DateThai($row["standard_create"]) ; ?></td>  
+                              <?php if($row['standard_day'] == '') : ?>
+                              <td><?php echo "ยังไม่ได้แต่งตั้งสถานะ" ?></td>  
+                              <?php endif ; ?>
+                              <?php if($row['standard_day'] == true) : ?>
+                              <td><?php echo DateThai($row["standard_day"]) ; ?></td>  
+                              <?php endif ; ?>
                                <td><?php echo $row["standard_number"]; ?></td>  
                                <td><?php echo $row["standard_note"]; ?></td>  
                                <td><?php echo $row["standard_tacking"]; ?></td>  

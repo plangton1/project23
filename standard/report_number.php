@@ -1,4 +1,5 @@
 <?php require('./fontthai.php');?>
+<?php require('./date.php');?>
 <!DOCTYPE html>
 <html lang="en">
 

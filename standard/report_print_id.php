@@ -87,10 +87,10 @@ $query3 = sqlsrv_query($conn, $sql3);
                     </thead>
                     <tbody>
                        
-                            <td class="align-middle"></td>
-                             <td class="align-middle"><?= date($result['standard_create']) ?></td>
+                            <td class="align-middle"><?= date($result['standard_create']) ?></td>
                             <td class="align-middle"><?= $result['standard_number'] ?></td>
                             <td class="align-middle"><?= $result['standard_mandatory'] ?></td>
+                            <td class="align-middle"><?= $result['standard_detail'] ?></td>
                             <?php if($result['standard_day'] == '') : ?>
                             <td class="align-middle" >ยังไม่ได้ระบุสถานะ</td>
                             <?php endif ; ?>

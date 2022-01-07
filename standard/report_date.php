@@ -14,10 +14,10 @@
            <div class="container" style="width:900px;">  
                 <h2 align="center">รายงานเอกสารตามช่วงเวลา</h2>   
                 <div class="col-md-3">  
-                <input type="text" name="standard_create" id="standard_create" class="form-control" placeholder="จากวันที่" />  
+                <input type="text" name="standard_create" id="standard_create" class="form-control" placeholder="จากวันที่" autocomplete="off"/>  
                 </div>  
                 <div class="col-md-3">  
-                     <input type="text" name="standard_day" id="standard_day" class="form-control" placeholder="ถึงวันที่" />  
+                     <input type="text" name="standard_day" id="standard_day" class="form-control" placeholder="ถึงวันที่" autocomplete="off"/>  
                 </div>  
                 <div class="col-md-5">     
                      <input type="button" name="filter" id="filter" value="ค้นหาเอกสาร" class="btn btn-info" />  
@@ -25,14 +25,15 @@
                 <div style="clear:both"></div>                 
                 <br />  
                 <div id="order_table">  
-                     <table class="table table-bordered">  
+                     <table class="table table-bordered text-center">  
                           <tr>      
-                               <th width="5%">ลำดับ</th>   
-                               <th width="5%">หมายเลขเอกสาร</th>  
-                               <th width="30%">วันที่เปลี่ยนแปลงสถานะ</th>  
+                               <th width="5%">ลำดับ</th>  
+                               <th width="10%">วันที่เพิ่มเอกสาร</th>   
+                               <th width="10%">วันที่แต่งตั้งเอกสาร</th>  
+                               <th width="10%">หมายเลขเอกสาร</th>  
                                <th width="10%">หมายเหตุ</th>  
                                <th width="10%">หมายเลข tacking</th>  
-                               <th width="30%">วันที่เพิ่มเอกสาร</th>  
+                             
                           </tr>  
                      <?php  
                      $i = 1;
@@ -41,11 +42,12 @@
                      ?>  
                           <tr>  
                               <td><?php echo $i++ ; ?></td>  
-                               <td><?php echo $row["standard_idtb"]; ?></td>  
-                               <td><?php echo $row["standard_day"]; ?></td>  
+                              <td><?php echo $row["standard_create"]; ?></td>  
+                              <td><?php echo $row["standard_day"]; ?></td>  
+                               <td><?php echo $row["standard_number"]; ?></td>  
                                <td><?php echo $row["standard_note"]; ?></td>  
                                <td><?php echo $row["standard_tacking"]; ?></td>  
-                               <td><?php echo $row["standard_create"]; ?></td>  
+                              
                           </tr>  
                      <?php  
                      }  

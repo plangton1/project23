@@ -56,7 +56,7 @@ $result = sqlsrv_fetch_array($query);
                     if ($file_name != "") {   //not select file
                         //โฟลเดอร์ที่จะ upload file เข้าไป 
                         $path = "../fileupload/";
-        
+                        print_r($file_name);
         
                         //เอาชื่อไฟล์ที่มีอักขระแปลกๆออก
                         $remove_these = array(' ', '`', '"', '\'', '\\', '/', '_');

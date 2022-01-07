@@ -5,7 +5,7 @@ if(($_POST['query']) != '')
  $search_text = implode(",",$_POST['query']);
  $query = "SELECT * , a.department_id,b.department_id,b.department_name AS name_depart FROM dimension_department a 
  INNER JOIN department_tb b ON a.department_id = b.department_id
- INNER JOIN main_std c ON a.standard_idtb = c.standard_idtb  WHERE department_id IN ($search_text) ";
+ INNER JOIN main_std c ON a.standard_idtb = c.standard_idtb  WHERE b.department_id IN ($search_text) ";
 }
 else
 {

@@ -26,6 +26,7 @@ if (isset($_POST) && !empty($_POST)) {
             standard_detail = '$standard_detail' ,
             standard_mandatory = '$standard_mandatory' ,
             standard_tacking = '$standard_tacking' ,
+            standard_note = '$standard_note',
             standard_status ='$standard_status' ,
             standard_day = '$standard_day'
          WHERE standard_idtb = '$standard_idtb' ";

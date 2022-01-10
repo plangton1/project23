@@ -23,10 +23,8 @@
                                                 <option value="./standard/report_list.php" selected="selected">รายงานรายศูนย์
                                                 <option value="./standard/report_date.php">รายงานรายช่วงเวลา
                                                 <option value="./standard/report_status.php">รายงานรายสถานะ
-                                                <option value
-                                                
-                                                ="./standard/report_number.php">รายงานตามเลขมอก.
-                                                <option href="#" value="">รายงานตามหน่วยงานคู่แข่งที่เลือกหรือจำนวนคู่แข่ง (มาก-น้อย)
+                                                <option value="./standard/report_number.php">รายงานตามเลขมอก.
+                                                <option value="./standard/report_agency.php">รายงานตามหน่วยงานคู่แข่งที่เลือกหรือจำนวนคู่แข่ง (มาก-น้อย)
                                             </select>
 
 
